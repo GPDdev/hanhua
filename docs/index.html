@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>游戏与电影汉化实录 | hanhua</title>
+  <style>
+    :root { color-scheme: light dark; --page: #f6f6f1; --ink: #172724; --muted: #435851; --line: #c9d4cc; --accent: #175c48; --panel: #e4ede7; }
+    @media (prefers-color-scheme: dark) {
+      :root { --page: #15201d; --ink: #f1f4eb; --muted: #b7c9bf; --line: #43574e; --accent: #9adcb8; --panel: #24382d; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.7 Inter, "Microsoft YaHei UI", sans-serif; }
+    main, header, footer { max-width: 980px; margin: auto; padding: 0 clamp(18px, 4vw, 48px); }
+    header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; padding-top: 18px; padding-bottom: 12px; }
+    header strong { font: 700 24px/1.2 Georgia, serif; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+    h1 { margin: .6em 0 .4em; font-size: clamp(32px, 6vw, 54px); line-height: 1.2; letter-spacing: -.04em; }
+    h2 { margin: 0 0 8px; font-size: clamp(21px, 3vw, 30px); line-height: 1.4; }
+    h3 { font-size: 18px; margin: 22px 0 8px; }
+    p { margin: 7px 0 14px; }
+    a { color: var(--accent); text-underline-offset: .18em; }
+    a:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    section { border-top: 1px solid var(--line); padding: 24px 0 28px; scroll-margin-top: 12px; }
+    video { width: 100%; height: auto; aspect-ratio: 720 / 406; display: block; background: #0a0e0c; border-radius: 5px; }
+    fieldset { border: 0; margin: 0; padding: 0; display: flex; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; }
+    fieldset[hidden] { display: none; }
+    fieldset label { cursor: pointer; border-radius: 3px; padding: 4px 11px 4px 6px; background: var(--panel); }
+    input { accent-color: var(--accent); }
+    .controls, .files { display: flex; gap: 8px 16px; align-items: center; flex-wrap: wrap; margin: 10px 0; }
+    .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    figure { margin: 0; }
+    figure img { width: 100%; height: auto; display: block; border-radius: 4px; }
+    figcaption, .note, footer { color: var(--muted); font-size: 14px; }
+    footer { border-top: 1px solid var(--line); padding-top: 15px; padding-bottom: 28px; }
+    .sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    @media(max-width: 620px) { .pair { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<header><strong>hanhua</strong><nav aria-label="页面导航"><a href="#movie">电影</a><a href="#game">游戏</a><a href="https://github.com/GPDdev/hanhua#安装">安装说明</a></nav></header>
+<main>
+  <h1>游戏与电影汉化实录</h1>
+  <section id="movie">
+    <h2>电影《Elephants Dream》</h2>
+    <p>同一段 23 秒的对白，可以在原声与普通话之间切换。普通话版显示这次生成的中英双语字幕。</p>
+    <video id="player" controls playsinline preload="metadata" poster="demo/elephants-dream.jpg" src="demo/elephants-dream-zh.mp4" aria-label="Elephants Dream 汉化对比短片"></video>
+    <div class="controls">
+      <fieldset id="editions" hidden><legend class="sr">播放版本</legend>
+        <label><input type="radio" name="edition" value="demo/elephants-dream-zh.mp4" checked> 普通话与双语字幕</label>
+        <label><input type="radio" name="edition" value="demo/elephants-dream-original.mp4"> 英语原声</label>
+      </fieldset>
+    </div>
+    <div class="files"><a download href="demo/elephants-dream-zh.mkv">下载双音轨 MKV</a><a href="demo/elephants-dream-original.mp4">打开原声 MP4</a><a href="demo/elephants-dream-zh.mp4">打开普通话 MP4</a></div>
+    <p class="note">输入片段来自原片 00:45 至 01:08，没有字幕。技能听出 7 句对白。约第 6、8、13 秒，画面纹理被 OCR 误识为字母。预览与 MKV 均保留了这三处结果。</p>
+  </section>
+  <section id="game">
+    <h2>游戏《The Question》</h2>
+    <p>Ren’Py 8.5.3 实机截图。点击画面可查看大图。</p>
+    <h3>剧情选择</h3>
+    <div class="pair">
+      <figure><a href="demo/the-question-en.jpg"><img loading="lazy" src="demo/the-question-en.jpg" width="1280" height="720" alt="英文剧情，两项选择为立即询问或稍后再问"></a><figcaption>还原后首次启动，英文选择与对白。</figcaption></figure>
+      <figure><a href="demo/the-question-zh.jpg"><img loading="lazy" src="demo/the-question-zh.jpg" width="1280" height="720" alt="相同场景，选项为马上问她和以后问她"></a><figcaption>补丁生效后，加载游戏已有的中文选项。</figcaption></figure>
+    </div>
+    <h3 id="game-dialogue">补译的开场对白</h3>
+    <div class="pair">
+      <figure><a href="demo/opening-en.jpg"><img loading="lazy" src="demo/opening-en.jpg" width="1280" height="720" alt="阶梯教室内的英文开场独白"></a><figcaption>安装前，英语开场对白。</figcaption></figure>
+      <figure><a href="demo/opening-zh.jpg"><img loading="lazy" src="demo/opening-zh.jpg" width="1280" height="720" alt="原场景中显示了补译的中文独白"></a><figcaption>测试副本留空的开场对白，由 Codex 补译后在游戏中显示。</figcaption></figure>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>《Elephants Dream》节选与汉化预览采用 CC BY 2.5。<br>(c) copyright 2006, Blender Foundation / Netherlands Media Art Institute / www.elephantsdream.org</p>
+  <p>《The Question》来自 Ren’Py SDK。<a href="https://github.com/GPDdev/hanhua/blob/main/docs/demo/CREDITS.md">完整素材署名与许可证</a> ｜ <a href="https://github.com/GPDdev/hanhua">GitHub 仓库</a></p>
+</footer>
+<script>
+  const player = document.getElementById("player");
+  const editions = document.getElementById("editions");
+  editions.hidden = false;
+  let switching = null;
+  editions.addEventListener("change", event => {
+    if (!switching) switching = { position: player.currentTime, playing: !player.paused && !player.ended, rate: player.playbackRate };
+    player.pause();
+    player.removeAttribute("poster");
+    player.src = event.target.value;
+    player.load();
+  });
+  player.addEventListener("loadedmetadata", () => {
+    if (!switching) return;
+    const { position, playing, rate } = switching;
+    switching = null;
+    player.currentTime = Math.min(position, player.duration);
+    player.playbackRate = rate;
+    if (playing) player.play().catch(() => {});
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "游戏与影视汉化"
+  short_description: "在 Windows 上生成游戏汉化补丁、实时中文字幕和多音轨普通话影片"
+  default_prompt: "使用 $hanhua 汉化我指定的游戏目录、电影或整季剧集。"

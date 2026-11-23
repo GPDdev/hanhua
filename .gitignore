@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+.ruff_cache/
+/HANDOFF.md
+/handoffs/
+/.readme-checkpoint-*.md
+*.hanhua/

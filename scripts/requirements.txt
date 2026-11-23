@@ -1,0 +1,14 @@
+filelock==4.3.0
+faster-whisper==1.2.1
+numpy==2.4.6
+opencc-python-reimplemented==0.1.7
+Pillow==13.0.0
+polib==1.2.0
+psutil==7.2.2
+pysubs2==1.8.1
+rapidocr-onnxruntime==1.4.4
+requests==2.34.2
+sherpa-onnx==2.0.3
+soundfile==0.14.0
+UnityPy==1.25.4
+windows-capture==2.0.1

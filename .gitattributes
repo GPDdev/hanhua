@@ -1,0 +1,6 @@
+*.jpg binary
+*.mp4 binary
+*.mkv binary
+*.exe binary
+*.ass -text
+*.srt -text whitespace=-blank-at-eof
